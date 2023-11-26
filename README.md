@@ -1,147 +1,97 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
- *{
-     font-family: 'Poppins',cursive;
- }
- body{
-     color: azure;
-     width: 100%;
-     height: 100vh;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     justify-content: center;
-     background-color: black;
- }
- .greetings{
-     font-size: 2rem;
-     font-weight: 600;
- }
- .greetings > span{
-     animation: glow 0.5s ease-in-out infinite;
- }
- @keyframes glow{
-     0%, 100%{
-         color: #fff;
-         text-shadow: 0 0 12px #39c6d6, 0 0 50px #39c6d6, 0 0 100px #39c6d6;
-     }
-     10%, 90%{
-         color: #111;
-         text-shadow: none;
-     }
- }
- .greetings > span:nth-child(1){
-     animation-delay: .7s ;
- }
- .greetings > span:nth-child(2){
-     animation-delay: .7s ;
- }
- .greetings > span:nth-child(3){
-     animation-delay: .7s ;
- }
- .greetings > span:nth-child(4){
-     animation-delay: .7s;
- }
- .greetings > span:nth-child(5){
-     animation-delay: .7s;
- }
- .greetings > span:nth-child(6){
-     animation-delay: .7s ;
- }
- .greetings > span:nth-child(7){
-     animation-delay: .7s ;
- }
- .greetings > span:nth-child(8){
-     animation-delay: .7s ;
- }
- .greetings > span:nth-child(9){
-     animation-delay: .7s ;
- }
- .greetings > span:nth-child(10){
-     animation-delay: .7s ;
- }
- .greetings > span:nth-child(11){
-     animation-delay: .7s ;
- }
- .greetings > span:nth-child(12){
-     animation-delay: .7s ;
- }
- .greetings > span:nth-child(13){
-     animation-delay: .7s ;
- }
- .greetings > span:nth-child(14){
-     animation-delay: .7s ;
- }
- .greetings > span:nth-child(15){
-     animation-delay: .7s ;
- }
- .greetings > span:nth-child(16){
-     animation-delay: .7s ;
- }
- .greetings > span:nth-child(17){
-     animation-delay: .7s ;
- }
- .greetings > span:nth-child(18){
-     animation-delay: .7s ;
- }
- .greetings > span:nth-child(19){
-     animation-delay: .7s ;
- }
- .greetings > span:nth-child(20){
-     animation-delay: .7s ;
- }
- .greetings > span:nth-child(21){
-     animation-delay: .7s ;
- }
- .greetings > span:nth-child(22){
-     animation-delay: .7s ;
- }
- .greetings > span:nth-child(23){
-     animation-delay: .7s ;
- }
- .greetings > span:nth-child(24){
-     animation-delay: .7s ;
- }
- .greetings > span:nth-child(25){
-     animation-delay: .7s ;
- }
- .greetings > span:nth-child(26){
-     animation-delay: .7s ;
- }
- .greetings > span:nth-child(27){
-     animation-delay: .7s ;
- }
- .greetings > span:nth-child(28){
-     animation-delay: .7s ;
- }
- .greetings > span:nth-child(29){
-     animation-delay: .7s ;
- }
- .description{
-     font-size: 1rem;
-     margin-bottom: 20px;
- }
+{
+    "liveServer.settings.port": 5501
+}
 
- .button a{
-     text-decoration: none;
-     font-size: 1rem;
-     color: red;
- }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="wrapper">
+        <h2 class="question">Do you love me?</h2>
+        <img class="gif" alt="gif" src="https://media0.giphy.com/media/t8Lo2mPAzOcmVTgtGe/giphy.gif?cid=6c09b952231uyrnduhdsf4wqnxz03rv9wx3ni5sm0zolrxz3&ep=v1_stickers_related&rid=giphy.gif&ct=s"/>
+        <div class="btn-group">
+            <button class="yes-btn">Yes</button>
+            <button class="no-btn">No</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
 
- @media screen and (max-width:574px){
-     .greetings{
-         display: block;
-         font-size: 1.8rem;
-         font-weight: 600;
-         text-align: center;
-     }
-     .description{
-         font-size: 5px;
-     }
+const wrapper = document.querySelector(".wrapper");
+const question = document.querySelector(".question");
+const gif = document.querySelector(".gif");
+const yesBtn = document.querySelector(".yes-btn");
+const noBtn = document.querySelector(".no-btn");
 
-     .button a{
-         font-size: 10px;
-     }
-     .button {
-       margin: 5px 4px 6px 5px;
-     }
- } 
+yesBtn.addEventListener("click", () => {
+  question.innerHTML = "I love you too! 😘";
+  gif.src =
+    "https://media1.giphy.com/media/iCVzZwwE6QNAV2tEE0/giphy.gif";
+});
+
+noBtn.addEventListener("mouseover", () => {
+  const noBtnRect = noBtn.getBoundingClientRect();
+  const maxX = window.innerWidth - noBtnRect.width;
+  const maxY = window.innerHeight - noBtnRect.height;
+
+  const randomX = Math.floor(Math.random() * maxX);
+  const randomY = Math.floor(Math.random() * maxY);
+
+  noBtn.style.left = randomX + "px";
+  noBtn.style.top = randomY + "px";
+});
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: whitesmoke;
+}
+h2 {
+    text-align: center;
+    font-size: 3em;
+    color: #e94d58;
+    margin: 15px 0;
+}
+.btn-group {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+button {
+    position: absolute;
+    width: 150px;
+    height: inherit;
+    color: white;
+    font-size: 1.2em;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px gray;
+    border: 2px solid #e94d58;
+    font-size: 1.2em;
+}
+button:nth-child(1) {
+    margin-left: -200px;
+    background: #e94d58;
+}
+button:nth-child(2) {
+    margin-right: -200px;
+    background: white;
+    color: #e94d58;
+}
